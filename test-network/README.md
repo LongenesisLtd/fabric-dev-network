@@ -19,7 +19,7 @@
 [You have to repeat steps 11 and 12 it each time you run reload_network.sh]
 
 12) After setup is done - Copy "connection-org1.yaml" from "organizations/peerOrganizations/org1.example.com" to "[themis-sdk-path]/connectionProfile.yaml"
-13) To finalize connection: in the coppied connectionProfile.yaml change "peer0.org1.example.com" url to "grpcs://internal.docker.host:7051" and "ca.org1.example.com" url to 
-"https://internal.docker.host:7054"
+13) To finalize connection: in the coppied connectionProfile.yaml change "peer0.org1.example.com" url to "grpcs://host.docker.internal:7051" and "ca.org1.example.com" url to 
+"https://host.docker.internal:7054"
 
 Optional: If want to see errors comming from the chaincode - run "./monitordocker.sh docker_test" in a separate terminal tab
