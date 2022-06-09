@@ -2,7 +2,7 @@
 
 PATH_TO_NETWORK="/Users/arnijs/fabric-samples/test-network"
 PATH_TO_CODE="/Users/arnijs/themis-smart-contract/smart_contract"
-SEQUENCE=6
+SEQUENCE=1
 export PATH=${PATH_TO_NETWORK}/../bin:$PATH
 export FABRIC_CFG_PATH=$PATH_TO_NETWORK/../config/
 cd $PATH_TO_CODE
