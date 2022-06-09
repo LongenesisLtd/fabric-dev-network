@@ -1,5 +1,12 @@
-## Running the test network
+## Running the test network in docker containers
 
-You can use the `./network.sh` script to stand up a simple Fabric test network. The test network has two peer organizations with one peer each and a single node raft ordering service. You can also use the `./network.sh` script to create channels and deploy chaincode. For more information, see [Using the Fabric test network](https://hyperledger-fabric.readthedocs.io/en/latest/test_network.html). The test network is being introduced in Fabric v2.0 as the long term replacement for the `first-network` sample.
-
-Before you can deploy the test network, you need to follow the instructions to [Install the Samples, Binaries and Docker Images](https://hyperledger-fabric.readthedocs.io/en/latest/install.html) in the Hyperledger Fabric documentation.
+1) Make sure you have the prerequisites installed: https://hyperledger-fabric.readthedocs.io/en/latest/prereqs.html
+2) curl -sSLO https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/install-fabric.sh && chmod +x install-fabric.sh
+3) ./install-fabric.sh docker binary
+4) Clone https://github.com/LongenesisLtd/themis-smart-contract repo somewhere in your home directory
+5) Change the reload_contract.sh script's configuration: PATH_TO_NETWORK=[path to current directory] PATH_TO_CODE=[path to themis-smart-contract directory]
+6) Run ./reload_network.sh
+7) After setup is done - Copy "connection-org1.yaml" from "organizations/peerOrganizations/org1.example.com/connection-org1.yaml" to "[themis-sdk-path]/connectionProfile.yaml"
+8) To finalize connection: in the coppied connectionProfile.yaml change "peer0.org1.example.com" url to "grpcs://internal.docker.host:7051" and "ca.org1.example.com" url to 
+"https://internal.docker.host:7054"
+9) Optional: If want to see errors comming from the chaincode - run "./monitordocker.sh docker_test" in a separate terminal tab
