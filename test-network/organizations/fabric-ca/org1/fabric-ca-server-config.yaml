@@ -311,6 +311,8 @@ csr:
    hosts:
      - localhost
      - org1.example.com
+     - host.docker.internal
+     - peer0.org1.example.com
    ca:
       expiry: 131400h
       pathlength: 1

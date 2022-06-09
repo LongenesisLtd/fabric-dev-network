@@ -311,6 +311,8 @@ csr:
    hosts:
      - localhost
      - example.com
+     - orderer.example.com
+     - host.docker.internal
    ca:
       expiry: 131400h
       pathlength: 1
